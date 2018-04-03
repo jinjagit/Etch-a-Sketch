@@ -1,0 +1,25 @@
+body{
+  font-family: 'Space+Mono', monospace;
+  color: #242e35;
+  background-color: #ddd;
+  margin: 0 auto;
+}
+
+#grid{
+  display: grid;
+  margin: auto;
+  background-color: black;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.25em;
+
+}
+
+#square {
+  background-color: #ccc;
+}
+
+#header {
+  background-color: #eee;
+  margin: auto;
+  text-align: center;
+}

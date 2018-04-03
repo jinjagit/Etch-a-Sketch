@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Etch-a-Sketch</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body onresize="drawGrid()">
+  <div id="header">
+    header div
+  </div>
+  <div id="grid">
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+    <div id="square">
+    </div>
+  </div>
+
+<script>
+
+  function calcGridSize() {
+    gridHeightLimit = Math.floor(window.innerHeight * 0.8);
+    gridWidthLimit = window.innerWidth;
+    gridLimit = gridHeightLimit;
+    if (gridLimit > gridWidthLimit) { gridLimit = gridWidthLimit; }
+    gridSize = gridLimit.toString() + "px";
+    headerLimit = Math.floor(window.innerHeight * 0.15);
+    headerHeight = headerLimit.toString() + "px";
+    return gridSize;
+  }
+
+  function calcRowHeight() {
+    let rowHeightNum = Math.floor(gridLimit / gridDimension);
+    rowHeight = rowHeightNum.toString() + "px";
+    return rowHeight;
+  }
+
+  function drawGrid() {
+    gridSize = calcGridSize();
+    rowHeight = calcRowHeight();
+
+    document.getElementById('header').style.height = headerHeight;
+    document.getElementById('header').style.width = gridSize;
+    document.getElementById('grid').style.width = gridSize;
+    document.getElementById('grid').style.gridAutoRows = rowHeight;
+  }
+
+  let gridDimension = 3;
+  let gridWidthLimit = 0;
+  let gridHeightLimit = 0;
+  let gridLimit = 0;
+  let rowHeight = "";
+  let gridSize = "";
+  let headerLimit = 0;
+  let headerHeight = "";
+
+  drawGrid();
+
+
+</script>
+
+
+</body>
+</html>
