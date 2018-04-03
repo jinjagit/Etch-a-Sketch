@@ -28,6 +28,7 @@
 <script>
 
   function createSquares() {
+    numSquares = gridDimension * gridDimension;
     for (let i = 0; i < numSquares; i++) {
       const square = document.createElement('div');
       square.classList.add('square');
@@ -43,20 +44,17 @@
   }
 
   function calcSizes() {
-    let heightFactor = 0.84 + (((gridDimension - 16) / 48) * 0.05); // Adjust grid size to account for more or less gaps in grid
-    console.log(heightFactor);
-    gridHeightLimit = Math.floor(window.innerHeight * heightFactor);
-    gridWidthLimit = window.innerWidth;
+    gridHeightLimit = window.innerHeight * 0.8;
+    gridWidthLimit = window.innerWidth * 0.95;
     gridLimit = gridHeightLimit;
-    if (gridLimit > gridWidthLimit) {gridLimit = gridWidthLimit;} // Set grid side-length to less than smallest window dimension (x or y), also accounting for space for header.
-    gridLimit = Math.floor(gridLimit - (gridDimension - 1)); // Account for 1px grid-gap
+    if (gridLimit > gridWidthLimit) {gridLimit = gridWidthLimit;} // Set grid side-length to less than smallest window dimension (x or y)
     gridSize = gridLimit.toString() + "px";
     ribbonWidth = (gridLimit - 4).toString() + "px";
 
     headerLimit = Math.floor(window.innerHeight * 0.15);
     headerHeight = headerLimit.toString() + "px";
 
-    let rowHeightNum = Math.floor((gridLimit - (gridDimension - 1))/ gridDimension); // Account for 1px grid-gap
+    let rowHeightNum = (gridLimit - (gridDimension - 1))/ gridDimension; // Account for 1px grid-gap
     rowHeight = rowHeightNum.toString() + "px";
 
     gridColumns = "repeat(" + gridDimension.toString() + ", 1fr)"
@@ -79,13 +77,12 @@
     } while(isNaN(gridDimension) || gridDimension > 64 || gridDimension < 16);
 
     removeSquares();
-    numSquares = gridDimension * gridDimension;
     createSquares();
     drawPage();
   }
 
   let gridDimension = 16;
-  let numSquares = gridDimension * gridDimension;
+  let numSquares = 0;
   let gridWidthLimit = 0;
   let gridHeightLimit = 0;
   let gridLimit = 0;
@@ -96,11 +93,8 @@
   let ribbonWidth = "";
   let gridColumns = "";
 
-
-
   createSquares();
   drawPage();
-
 
 </script>
 
