@@ -3,6 +3,8 @@ body{
   color: yellow;
   background: radial-gradient(red, #6d0000);
   margin: 0 auto;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #grid{
