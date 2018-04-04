@@ -75,7 +75,7 @@
   function reset() {
     let oldGrid = gridDimension;
     do {
-      gridDimension = window.prompt("Change number of squares per side (16 - 64)", oldGrid), 10;
+      gridDimension = window.prompt("Change number of squares per side? (16 - 64)", oldGrid), 10;
       if (gridDimension === null) {return;} // Enables cancel button on prompt window
       else {gridDimension = parseInt(gridDimension);}
     } while(isNaN(gridDimension) || gridDimension > 64 || gridDimension < 16);
