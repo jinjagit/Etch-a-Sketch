@@ -1,10 +1,25 @@
 body{
-  font-family: 'Space+Mono', monospace;
+  /** font-family: 'Space+Mono', monospace; **/
+  font-family: 'Dr Sugiyama', cursive, "Times New Roman", Times, serif;
   color: #f9dd8e;
   background: radial-gradient(red, #6d0000);
   margin: 0 auto;
   background-size: cover; /** This seems to work better than no-repeat (Chrome on Android issues) **/
   text-shadow: 2px 2px rgba(0,0,0,0.75);
+}
+
+#middleWrapper {
+  width: 160px;
+}
+
+h1 {
+  display: inline;
+  float:left;
+}
+
+#tm {
+  float:left;
+  margin-top: 20px;
 }
 
 #grid{
@@ -130,4 +145,16 @@ input:checked + .slider:before {
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+}
+
+@media all and (min-width: 900px) {
+  h1 {
+    font-size: 38px;
+  }
+  #middleWrapper {
+    width: 200px;
+  }
+  #tm {
+    margin-top: 22px;
+  }
 }

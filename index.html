@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link href="https://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
   <title>Sketchy-Etch</title>
   <link rel="stylesheet" href="style.css">
 </head>
@@ -11,8 +12,9 @@
       <div class='wrapper'>
         <button onclick="reset()" id="reset">RESET</button>
       </div>
-      <div class='wrapper'>
-        Sketchy-Etch
+      <div class='wrapper' id="middleWrapper">
+        <h1>Sketchy-Etch</h1>
+        <div id="tm"> &trade;</div>
       </div>
       <div class='wrapper'>
         <label class="switch">
@@ -85,18 +87,18 @@
     drawPage();
   }
 
-  let gridDimension = 16;
+  let gridDimension = 32;
   let numSquares = 0;
   let gridWidthLimit = 0;
   let gridHeightLimit = 0;
   let gridLimit = 0;
-  let rowHeight = "";
-  let gridSize = "";
+  let rowHeight = "not set";
+  let gridSize = "not set";
   let headerLimit = 0;
-  let headerHeight = "";
-  let headerWidth = "";
-  let ribbonWidth = "";
-  let gridColumns = "";
+  let headerHeight = "not set";
+  let headerWidth = "not set";
+  let ribbonWidth = "not set";
+  let gridColumns = "not set";
 
   createSquares();
   drawPage();
