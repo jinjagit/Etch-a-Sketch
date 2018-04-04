@@ -174,7 +174,9 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #f9dd8e;
+  /**background-color: #f9dd8e;**/
+  background-image: url("toggleBackground.jpg");
+  background-size: cover;
   -webkit-transition: .4s;
   transition: .4s;
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
