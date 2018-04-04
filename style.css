@@ -3,7 +3,7 @@ body{
   color: yellow;
   background: radial-gradient(red, #6d0000);
   margin: 0 auto;
-  background-size: cover;
+  background-size: cover; /** This seems to work better than no-repeat (Chrome on Android issues) **/
 }
 
 #grid{
@@ -31,6 +31,7 @@ body{
   border-style: solid;
   border-color: yellow;
   border-width: 2px;
+  border-radius: 15px;
   margin-top: 2%;
 }
 
@@ -45,7 +46,7 @@ body{
   display:block;
   background-color: yellow;
   color: #6d0000;
-  border-radius: 40px;
+  border-radius: 8px;
   border: none;
   outline: none;
   box-sizing: border-box;
@@ -86,6 +87,7 @@ body{
   background-color: #9c0404;
   -webkit-transition: .4s;
   transition: .4s;
+  border-radius: 20%;
 }
 
 input:checked + .slider {
@@ -104,9 +106,9 @@ input:checked + .slider:before {
 
 
 .slider.round {
-  border-radius: 34px;
+  border-radius: 20%;
 }
 
 .slider.round:before {
-  border-radius: 50%;
+  border-radius: 20%;
 }
