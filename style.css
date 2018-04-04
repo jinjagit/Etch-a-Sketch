@@ -46,7 +46,7 @@ h1 {
 
 .slider {
   display: inline-block;
-  width: 60%;
+  width: 70%;
   float: left;
   margin-top: 12px;
 }
@@ -159,7 +159,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 .switch {
   position: relative;
-  margin:0 -25px 0 72px;
+  margin: 5px -25px 0 72px;
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -278,7 +278,7 @@ input:checked + .toggle:before {
 
   @media all and (min-height: 1000px) {
     .switch {
-      margin:0 -45px 0 90px;
+      margin: 8px -45px 0 90px;
     }
     #title {
       font-size: 48px;
