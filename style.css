@@ -9,7 +9,7 @@ body{
 }
 
 #middleWrapper {
-  width: 160px;
+  width: 280px;
   background-color: rgba(187, 187, 187, 0);
   vertical-align: top;
 }
@@ -33,6 +33,7 @@ h1 {
   display: inline-block;
   margin-top: 22px;
   height: 48px;
+  width: 100%;
   vertical-align: center;
 }
 
@@ -45,7 +46,7 @@ h1 {
 
 .slider {
   display: inline-block;
-  width: 65%;
+  width: 60%;
   float: left;
   margin-top: 12px;
 }
@@ -68,11 +69,11 @@ input[type=range]::-webkit-slider-runnable-track {
 input[type=range]::-webkit-slider-thumb {
     -webkit-appearance: none;
     border: none;
-    height: 16px;
-    width: 16px;
+    height: 21px;
+    width: 21px;
     border-radius: 50%;
     background-color: #f9dd8e;
-    margin-top: -6px;
+    margin-top: -10px;
     -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
     box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
@@ -90,9 +91,10 @@ input[type=range]:focus::-webkit-slider-runnable-track {
   display: inline-block;
   font-family: Arial;
   font-size: 12px;
-  float: right;
+  float: left;
   position: relative;
-  bottom: 5px;
+  bottom: 6px;
+  left: 5px;
 }
 
 #grid{
@@ -227,7 +229,7 @@ input:checked + .toggle:before {
     margin-top: 0px;
   }
   #middleWrapper {
-    width: 200px;
+    width: 240px;
   }
   #tm {
     margin-top: 0px;
