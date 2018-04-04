@@ -139,7 +139,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 }
 
 #reset {
-  margin:0 auto;
+  margin:0 0 0 50px;
   display:block;
   background-color: #f9dd8e;
   color: #6d0000;
@@ -159,6 +159,7 @@ input[type=range]:focus::-webkit-slider-runnable-track {
 
 .switch {
   position: relative;
+  margin:0 -25px 0 72px;
   display: inline-block;
   width: 60px;
   height: 34px;
@@ -272,6 +273,26 @@ input:checked + .toggle:before {
     }
     #sliderContainer {
       margin-top: 15px;
+    }
+  }
+
+  @media all and (min-height: 1000px) {
+    .switch {
+      margin:0 -45px 0 90px;
+    }
+    #title {
+      font-size: 48px;
+      margin-top: 0px;
+    }
+    #middleWrapper {
+      width: 230px;
+    }
+    #tm {
+      margin-top: 0px;
+    }
+    .slider {
+      width: 75%;
+      margin-top: 12px;
     }
   }
 }
