@@ -49,10 +49,12 @@
     gridLimit = gridHeightLimit;
     if (gridLimit > gridWidthLimit) {gridLimit = gridWidthLimit;} // Set grid side-length to less than smallest window dimension (x or y)
     gridSize = gridLimit.toString() + "px";
-    ribbonWidth = (gridLimit - 4).toString() + "px";
 
     headerLimit = Math.floor(window.innerHeight * 0.15);
     headerHeight = headerLimit.toString() + "px";
+
+    headerWidth = (gridLimit + 8).toString() + "px"; // Add 8px to header width to account for grid drop shadow
+    ribbonWidth = (gridLimit + 4).toString() + "px"; // Subtract 4px from ribbon width to account for border
 
     let rowHeightNum = (gridLimit - (gridDimension - 1))/ gridDimension; // Account for 1px grid-gap
     rowHeight = rowHeightNum.toString() + "px";
@@ -63,7 +65,7 @@
   function drawPage() {
     calcSizes();
     document.getElementById('header').style.height = headerHeight;
-    document.getElementById('header').style.width = gridSize;
+    document.getElementById('header').style.width = headerWidth;
     document.getElementById('ribbon').style.width = ribbonWidth;
     document.getElementById('grid').style.width = gridSize;
     document.getElementById('grid').style.gridAutoRows = rowHeight;
@@ -92,6 +94,7 @@
   let gridSize = "";
   let headerLimit = 0;
   let headerHeight = "";
+  let headerWidth = "";
   let ribbonWidth = "";
   let gridColumns = "";
 
