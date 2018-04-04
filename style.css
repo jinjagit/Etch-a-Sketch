@@ -19,6 +19,10 @@ h1 {
   float:left;
 }
 
+#title {
+  font-size: 42px;
+}
+
 #tm {
   float:left;
   margin-top: 0px;
@@ -27,8 +31,8 @@ h1 {
 #titleContainer {
   background-color: rgba(187, 187, 187, 0);
   display: inline-block;
-  margin-top: 15px;
-  height: 65px;
+  margin-top: 22px;
+  height: 48px;
   vertical-align: center;
 }
 
@@ -36,7 +40,7 @@ h1 {
   display: block;
   position: relative;
   width: 100%;
-  background-color: blue;
+  margin-top: 18px;
 }
 
 .slider {
@@ -194,6 +198,7 @@ input:checked + .toggle:before {
   #reset {
     height: 48px;
     width: 90px;
+    font-size: 16px;
   }
   .switch {
     position: relative;
@@ -219,5 +224,15 @@ input:checked + .toggle:before {
     -webkit-transform: translateX(39px);
     -ms-transform: translateX(39px);
     transform: translateX(39px);
+  }
+
+  @media all and (max-height: 1000px) {
+    #titleContainer {
+      margin-top: 13px;
+      height: 38px;
+    }
+    #sliderContainer {
+      margin-top: 15px;
+    }
   }
 }
