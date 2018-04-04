@@ -13,13 +13,19 @@
         <button onclick="reset()" id="reset">RESET</button>
       </div>
       <div class='wrapper' id="middleWrapper">
-        <h1>Sketchy-Etch</h1>
-        <div id="tm"> &trade;</div>
+        <div id="titleContainer">
+          <h1>Sketchy-Etch</h1>
+          <div id="tm"> &trade;</div>
+        </div>
+        <div id="sliderContainer">
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+          <p id="sliderLabel">WEIGHT</p>
+        </div>
       </div>
       <div class='wrapper'>
         <label class="switch">
           <input type="checkbox">
-          <span class="slider round"></span>
+          <span class="toggle round"></span>
         </label>
       </div>
     </div>

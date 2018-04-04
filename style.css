@@ -10,6 +10,8 @@ body{
 
 #middleWrapper {
   width: 160px;
+  background-color: rgba(187, 187, 187, 0);
+  vertical-align: top;
 }
 
 h1 {
@@ -19,7 +21,37 @@ h1 {
 
 #tm {
   float:left;
-  margin-top: 20px;
+  margin-top: 0px;
+}
+
+#titleContainer {
+  background-color: rgba(187, 187, 187, 0);
+  display: inline-block;
+  margin-top: 15px;
+  height: 65px;
+  vertical-align: center;
+}
+
+#sliderContainer {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-color: blue;
+}
+
+.slider {
+  display: inline-block;
+  width: 65%;
+  float: left;
+}
+
+#sliderLabel {
+  display: inline-block;
+  font-family: Arial;
+  font-size: 12px;
+  float: right;
+  position: relative;
+  bottom: 8px;
 }
 
 #grid{
@@ -77,6 +109,7 @@ h1 {
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  font-family: Arial;
 }
 
 /** toggle stuff **/
@@ -90,7 +123,7 @@ h1 {
 
 .switch input {display:none;}
 
-.slider {
+.toggle {
   position: absolute;
   cursor: pointer;
   top: 0;
@@ -105,7 +138,7 @@ h1 {
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
-.slider:before {
+.toggle:before {
   position: absolute;
   content: "";
   height: 26px;
@@ -118,43 +151,73 @@ h1 {
   border-radius: 20%;
 }
 
-input:checked + .slider {
+input:checked + .toggle {
   background-color: orange;
 }
 
-input:focus + .slider {
+input:focus + .toggle {
   box-shadow: 0 0 1px #2196F3;
 }
 
-input:checked + .slider:before {
+input:checked + .toggle:before {
   -webkit-transform: translateX(26px);
   -ms-transform: translateX(26px);
   transform: translateX(26px);
 }
 
 
-.slider.round {
+.toggle.round {
   border-radius: 20%;
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
-.slider.round:before {
+.toggle.round:before {
   border-radius: 20%;
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
 }
 
-@media all and (min-width: 900px) {
+@media all and (min-width: 400px) {
   h1 {
     font-size: 38px;
+    margin-top: 0px;
   }
   #middleWrapper {
     width: 200px;
   }
   #tm {
-    margin-top: 22px;
+    margin-top: 0px;
+  }
+  #reset {
+    height: 48px;
+    width: 90px;
+  }
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 90px;
+    height: 51px;
+  }
+  .toggle:before {
+    position: absolute;
+    content: "";
+    height: 39px;
+    width: 39px;
+    left: 6px;
+    bottom: 6px;
+    background-color: #9c0404;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 20%;
+    font-family: Arial;
+    font-size: 10px;
+  }
+  input:checked + .toggle:before {
+    -webkit-transform: translateX(39px);
+    -ms-transform: translateX(39px);
+    transform: translateX(39px);
   }
 }
