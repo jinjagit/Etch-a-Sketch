@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <link rel="stylesheet" href="reset.css" media="screen" />
   <link href="https://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
   <title>Sketchy-Etch</title>
   <link rel="stylesheet" href="style.css">
@@ -18,8 +19,10 @@
           <div id="tm"> &trade;</div>
         </div>
         <div id="sliderContainer">
-          <input title="Adjust coverage weight" type="range" min="10" max="100" value="25" class="slider" id="myRange">
-          <p id="sliderLabel">WEIGHT</p>
+          <span>
+            <input title="Adjust coverage weight" type="range" min="10" max="100" value="25" class="slider" id="myRange">
+            <p id="sliderLabel">WEIGHT</p>
+          </span>
         </div>
       </div>
       <div class='wrapper'>
