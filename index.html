@@ -10,7 +10,7 @@
   <div id="header">
     <div id="ribbon">
       <div class='wrapper'>
-        <button onclick="reset()" id="reset">RESET</button>
+        <button title="Clear screen + option to change grid density" onclick="reset()" id="reset">RESET</button>
       </div>
       <div class='wrapper' id="middleWrapper">
         <div id="titleContainer">
@@ -18,14 +18,14 @@
           <div id="tm"> &trade;</div>
         </div>
         <div id="sliderContainer">
-          <input type="range" min="10" max="100" value="25" class="slider" id="myRange">
+          <input title="Adjust coverage weight" type="range" min="10" max="100" value="25" class="slider" id="myRange">
           <p id="sliderLabel">WEIGHT</p>
         </div>
       </div>
       <div class='wrapper'>
         <label class="switch">
           <input type="checkbox">
-          <span class="toggle round"></span>
+          <span title="Toggle mode: monochrome or random color" class="toggle round"></span>
         </label>
       </div>
     </div>
