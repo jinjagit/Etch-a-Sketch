@@ -193,6 +193,13 @@ input[type=range]:focus::-moz-slider-runnable-track {
   font-family: Arial;
 }
 
+#reset:active {
+  background-color: #f2e3b8;
+  -webkit-box-shadow: -5px -2px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
+}
+
 /** toggle stuff **/
 
 .switch {
