@@ -74,7 +74,6 @@
     let oldGrid = gridDimension;
     do {
       gridDimension = window.prompt("Change number of squares per side (16 - 64)", oldGrid), 10;
-      console.log(gridDimension);
       if (gridDimension === null) {return;}
       gridDimension = parseInt(gridDimension);
     } while(isNaN(gridDimension) || gridDimension > 64 || gridDimension < 16);
