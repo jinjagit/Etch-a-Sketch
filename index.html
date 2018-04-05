@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="reset.css" media="screen" />
   <link href="https://fonts.googleapis.com/css?family=Dr+Sugiyama" rel="stylesheet">
-  <title>Sketchy-Etch</title>
+  <title >Sketchy-Etch</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body onresize="drawPage()">
@@ -15,12 +15,12 @@
       </div>
       <div class='wrapper' id="middleWrapper">
         <div id="titleContainer">
-          <h1 id="title">Sketchy - Etch</h1>
+          <h1 title="Keep it Sketchy!" id="title">Sketchy - Etch</h1>
           <div id="tm"> &trade;</div>
         </div>
         <div id="sliderContainer">
           <span>
-            <input title="Adjust coverage weight" type="range" min="10" max="100" value="25" class="slider" id="myRange">
+            <input title="Adjust stylus pressure" type="range" min="10" max="100" value="25" class="slider" id="myRange">
             <p id="sliderLabel">WEIGHT</p>
           </span>
         </div>
@@ -96,6 +96,11 @@
     drawPage();
   }
 
+  function slideChange() {
+    slideValue = document.getElementById('myRange').value;
+    sliderDiv.innerHTML = slideValue + "%";
+  }
+
   let gridDimension = 32;
   let numSquares = 0;
   let gridWidthLimit = 0;
@@ -108,9 +113,14 @@
   let headerWidth = "not set";
   let ribbonWidth = "not set";
   let gridColumns = "not set";
+  let slideValue = 0;
+
+  slide = document.getElementById('myRange').onchange = function() {slideChange()};
+  sliderDiv = document.getElementById("sliderLabel");
 
   createSquares();
   drawPage();
+  slideChange();
 
 </script>
 

@@ -131,6 +131,7 @@ input[type=range]:focus::-moz-slider-runnable-track {
   display: inline-block;
   font-family: Arial;
   font-size: 12px;
+  text-shadow: 1.5px 1.5px rgba(0,0,0,0.75);
   left: 5px;
   vertical-align: middle;
 }
@@ -225,7 +226,7 @@ input[type=range]:focus::-moz-slider-runnable-track {
   left: 0;
   right: 0;
   bottom: 0;
-  /**background-color: #f9dd8e;**/
+  background-color: #f9dd8e;
   background-image: url("toggleBackground.jpg");
   background-size: cover;
   -webkit-transition: .4s;
@@ -273,6 +274,7 @@ input:checked + .toggle:before {
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  margin: 0  auto;
 }
 
 @media all and (min-width: 400px) {
@@ -308,8 +310,6 @@ input:checked + .toggle:before {
     -webkit-transition: .4s;
     transition: .4s;
     border-radius: 20%;
-    font-family: Arial;
-    font-size: 10px;
   }
   input:checked + .toggle:before {
     -webkit-transform: translateX(39px);
