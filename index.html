@@ -28,7 +28,7 @@
       <div class='wrapper'>
         <label class="switch">
           <input type="checkbox">
-          <span title="Toggle mode: monochrome or random color" class="toggle round"></span>
+          <span title="Toggle mode: monochrome or random color" class="toggle round" id="toggle"></span>
         </label>
       </div>
     </div>
@@ -141,6 +141,11 @@
     return rgbArray;
   }
 
+  function rand256() {
+    let rand = Math.floor(Math.random() * 256);
+    return rand;
+  }
+
   function changeColor() {
     let squareID = this.id.toString();
     let element = document.getElementById(squareID);
@@ -148,22 +153,40 @@
     let bgColor = style.getPropertyValue("background-color");
     let rgbValues = parseRGB(bgColor);
     let rgbNewString = "";
+    let red = "";
+    let green = "";
+    let blue = "";
 
-    if (mode === 0) { // monochrome mode (change to actual string = clearer and no comment needed)
+    if (mode === "monochrome") {
       let grey = rgbValues[0];
       grey = Math.floor(grey - (255 * (slideValue / 100)));
       if (grey < 10) {grey = 0;}
       rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
-
-      console.log(grey);
-
       document.getElementById(squareID).style.backgroundColor = rgbNewString;
+    } else { // must be color mode
+      if (rgbValues[0] === 238 && rgbValues[1] === 238 && rgbValues[2] === 238) {
+        red = Math.floor(rand256()).toString();
+        blue = Math.floor(rand256()).toString();
+        green = Math.floor(rand256()).toString();
+        rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
+
+        document.getElementById(squareID).style.backgroundColor = rgbNewString;
+      }
+
     }
   }
 
   function squareHoverListen() {
     squares = document.querySelectorAll('.square');
     squares.forEach(square => square.addEventListener('mouseover', changeColor));
+  }
+
+  function toggleMode() {
+    if (mode === "monochrome") {
+      mode = "color";
+    } else {
+      mode = "monochrome";
+    }
   }
 
   let gridDimension = 32;
@@ -179,13 +202,14 @@
   let ribbonWidth = "not set";
   let gridColumns = "not set";
   let slideValue = 25;
-  let mode = 0; // 0 = monochrome, 1 = color (random)
+  let mode = "monochrome";
   let squares = [];
 
   document.getElementById('myRange').oninput = function() {slideChange()};
   document.getElementById('myRange').onchange = function() {slideChange()};
   sliderDiv = document.getElementById("sliderLabel");
   document.getElementById('myRange').value = slideValue;
+  document.getElementById('toggle').onclick = function() {toggleMode()};
 
   createSquares();
   drawPage();
