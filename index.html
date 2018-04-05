@@ -43,6 +43,7 @@
     for (let i = 0; i < numSquares; i++) {
       const square = document.createElement('div');
       square.classList.add('square');
+      square.id = i.toString();
       grid.appendChild(square);
     }
   }
@@ -94,11 +95,25 @@
     removeSquares();
     createSquares();
     drawPage();
+    slideChange();
+    squareHoverListen();
   }
 
   function slideChange() {
     slideValue = document.getElementById('myRange').value;
     sliderDiv.innerHTML = slideValue + "%";
+  }
+
+  function changeColor() {
+    let squareID = this.id.toString();
+    if (mode === 0) {
+      document.getElementById(squareID).style.backgroundColor = "black";
+    }
+  }
+
+  function squareHoverListen() {
+    squares = document.querySelectorAll('.square');
+    squares.forEach(square => square.addEventListener('mouseover', changeColor));
   }
 
   let gridDimension = 32;
@@ -114,15 +129,18 @@
   let ribbonWidth = "not set";
   let gridColumns = "not set";
   let slideValue = 25;
+  let mode = 0; // 0 = monochrome, 1 = color (random)
+  let squares = [];
 
-  document.getElementById('myRange').onchange = function() {slideChange()};
   document.getElementById('myRange').oninput = function() {slideChange()};
+  document.getElementById('myRange').onchange = function() {slideChange()};
   sliderDiv = document.getElementById("sliderLabel");
   document.getElementById('myRange').value = slideValue;
 
   createSquares();
   drawPage();
   slideChange();
+  squareHoverListen();
 
 </script>
 
