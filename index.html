@@ -157,25 +157,32 @@
     let green = 0;
     let blue = 0;
 
-    if (mode === "monochrome") {
-      let grey = rgbValues[0];
-      grey = Math.floor(grey - (238 * (slideValue / 100)));
-      if (grey < 10) {grey = 0;}
-      rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
-      document.getElementById(squareID).style.backgroundColor = rgbNewString;
-    } else { // must be color mode
-      if (rgbValues[0] === 238 && rgbValues[1] === 238 && rgbValues[2] === 238) {
-        red = Math.floor(rand239());
-        blue = Math.floor(rand239());
-        green = Math.floor(rand239());
-        red = Math.floor(red + (238 - red) * ((100 - slideValue) / 100)).toString();
-        blue = Math.floor(blue + (238 - blue) * ((100 - slideValue) / 100)).toString();
-        green = Math.floor(green + (238 - green) * ((100 - slideValue) / 100)).toString();
-        rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
-
-        document.getElementById(squareID).style.backgroundColor = rgbNewString;
+    if (rgbValues[0] === 238 && rgbValues[1] === 238 && rgbValues[2] === 238) { // if 'white', though actually very light grey
+      if (mode === "monochrome") {
+        let grey = Math.floor(238 - (238 * (slideValue / 100)));
+        rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
+      } else { // must be color mode
+          red = Math.floor(rand239());
+          blue = Math.floor(rand239());
+          green = Math.floor(rand239());
+          red = Math.floor(red + (238 - red) * ((100 - slideValue) / 100)).toString();
+          blue = Math.floor(blue + (238 - blue) * ((100 - slideValue) / 100)).toString();
+          green = Math.floor(green + (238 - green) * ((100 - slideValue) / 100)).toString();
+          rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
       }
+    } else {
+      red = rgbValues[0];
+      green = rgbValues[1];
+      blue = rgbValues[2];
+      red = Math.floor(red - (238 * (slideValue / 100)));
+      green = Math.floor(green - (238 * (slideValue / 100)));
+      blue = Math.floor(blue - (238 * (slideValue / 100)));
+      if (red < 25) {red = 0;} // err on darker side of rounding errors, with 24 being 10% of lightest possible value of 238 (minimum weight)
+      if (red < 25) {red = 0;}
+      if (red < 25) {red = 0;}
+      rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
     }
+    document.getElementById(squareID).style.backgroundColor = rgbNewString;
     console.log(rgbNewString);
   }
 
