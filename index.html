@@ -109,7 +109,7 @@
     let green = "";
     let blue = "";
     let char = "";
-    let rgbArray = ["", "", ""];
+    let rgbArray = [];
 
     rgbString = rgbString.slice(4);
     char = rgbString.slice(0, 1);
@@ -134,9 +134,9 @@
       char = rgbString.slice(0, 1);
     } while (char != ")");
 
-    rgbArray[0] = red;
-    rgbArray[1] = green;
-    rgbArray[2] = blue;
+    rgbArray[0] = parseInt(red);
+    rgbArray[1] = parseInt(green);
+    rgbArray[2] = parseInt(blue);
 
     return rgbArray;
   }
@@ -147,12 +147,17 @@
     let style = window.getComputedStyle(element,"");
     let bgColor = style.getPropertyValue("background-color");
     let rgbValues = parseRGB(bgColor);
-
-    console.log(rgbValues);
+    let rgbNewString = "";
 
     if (mode === 0) { // monochrome mode (change to actual string = clearer and no comment needed)
+      let grey = rgbValues[0];
+      grey = Math.floor(grey - (255 * (slideValue / 100)));
+      if (grey < 10) {grey = 0;}
+      rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
 
-      document.getElementById(squareID).style.backgroundColor = "black";
+      console.log(grey);
+
+      document.getElementById(squareID).style.backgroundColor = rgbNewString;
     }
   }
 
