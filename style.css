@@ -180,6 +180,8 @@ input[type=range]:focus::-moz-slider-runnable-track {
   margin:0 0 0 50px;
   display:block;
   background-color: #f9dd8e;
+  background-image: url("lampOff.jpg");
+  background-size: cover;
   color: #6d0000;
   border-radius: 8px;
   border: none;
@@ -187,17 +189,20 @@ input[type=range]:focus::-moz-slider-runnable-track {
   box-sizing: border-box;
   height: 34px;
   width: 60px;
-  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
   font-family: Arial;
+  padding-top: 5px;
 }
 
 #reset:active {
   background-color: #f2e3b8;
-  -webkit-box-shadow: -5px -2px 1px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
+  background-image: url("lampOn.jpg");
+  background-size: cover;
+  -webkit-box-shadow: -3px -3px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -3px -3px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: -3px -3px 2px 0px rgba(0,0,0,0.75);
 }
 
 /** toggle stuff **/
@@ -225,9 +230,7 @@ input[type=range]:focus::-moz-slider-runnable-track {
   background-size: cover;
   -webkit-transition: .4s;
   transition: .4s;
-  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+
 }
 
 .toggle:before {
@@ -241,6 +244,7 @@ input[type=range]:focus::-moz-slider-runnable-track {
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 20%;
+
 }
 
 input:checked + .toggle {
@@ -257,12 +261,11 @@ input:checked + .toggle:before {
   transform: translateX(26px);
 }
 
-
 .toggle.round {
   border-radius: 20%;
-  -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
+  box-shadow: -2px -2px 1px 0px rgba(0,0,0,0.75);
 }
 
 .toggle.round:before {
