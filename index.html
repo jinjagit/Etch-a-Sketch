@@ -104,41 +104,51 @@
     sliderDiv.innerHTML = slideValue + "%";
   }
 
+  function parseRGB(rgbString) {
+    let red = "";
+    let green = "";
+    let blue = "";
+    let char = "";
+    let rgbArray = ["", "", ""];
+
+    rgbString = rgbString.slice(4);
+    char = rgbString.slice(0, 1);
+
+    do {
+      red = red + char;
+      rgbString = rgbString.slice(1);
+      char = rgbString.slice(0, 1);
+    } while (char != ",");
+    rgbString = rgbString.slice(2);
+    char = rgbString.slice(0, 1);
+    do {
+      blue = blue + char;
+      rgbString = rgbString.slice(1);
+      char = rgbString.slice(0, 1);
+    } while (char != ",");
+    rgbString = rgbString.slice(2);
+    char = rgbString.slice(0, 1);
+    do {
+      green = green + char;
+      rgbString = rgbString.slice(1);
+      char = rgbString.slice(0, 1);
+    } while (char != ")");
+
+    rgbArray[0] = red;
+    rgbArray[1] = green;
+    rgbArray[2] = blue;
+
+    return rgbArray;
+  }
+
   function changeColor() {
     let squareID = this.id.toString();
-
     let element = document.getElementById(squareID);
     let style = window.getComputedStyle(element,"");
     let bgColor = style.getPropertyValue("background-color");
-    let red = "";
-    let green = ""
-    let blue = "";
-    let char = "";
+    let rgbValues = parseRGB(bgColor);
 
-    bgColor = bgColor.slice(4);
-    char = bgColor.slice(0, 1);
-    do {
-      red = red + char;
-      bgColor = bgColor.slice(1);
-      char = bgColor.slice(0, 1);
-    } while (char != ",");
-    bgColor = bgColor.slice(2);
-    char = bgColor.slice(0, 1);
-    do {
-      blue = blue + char;
-      bgColor = bgColor.slice(1);
-      char = bgColor.slice(0, 1);
-    } while (char != ",");
-    bgColor = bgColor.slice(2);
-    char = bgColor.slice(0, 1);
-    do {
-      green = green + char;
-      bgColor = bgColor.slice(1);
-      char = bgColor.slice(0, 1);
-    } while (char != ")");
-
-    console.log(blue);
-    console.log(bgColor);
+    console.log(rgbValues);
 
     if (mode === 0) { // monochrome mode (change to actual string = clearer and no comment needed)
 
