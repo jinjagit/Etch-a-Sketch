@@ -106,7 +106,42 @@
 
   function changeColor() {
     let squareID = this.id.toString();
-    if (mode === 0) {
+
+    let element = document.getElementById(squareID);
+    let style = window.getComputedStyle(element,"");
+    let bgColor = style.getPropertyValue("background-color");
+    let red = "";
+    let green = ""
+    let blue = "";
+    let char = "";
+
+    bgColor = bgColor.slice(4);
+    char = bgColor.slice(0, 1);
+    do {
+      red = red + char;
+      bgColor = bgColor.slice(1);
+      char = bgColor.slice(0, 1);
+    } while (char != ",");
+    bgColor = bgColor.slice(2);
+    char = bgColor.slice(0, 1);
+    do {
+      blue = blue + char;
+      bgColor = bgColor.slice(1);
+      char = bgColor.slice(0, 1);
+    } while (char != ",");
+    bgColor = bgColor.slice(2);
+    char = bgColor.slice(0, 1);
+    do {
+      green = green + char;
+      bgColor = bgColor.slice(1);
+      char = bgColor.slice(0, 1);
+    } while (char != ")");
+
+    console.log(blue);
+    console.log(bgColor);
+
+    if (mode === 0) { // monochrome mode (change to actual string = clearer and no comment needed)
+
       document.getElementById(squareID).style.backgroundColor = "black";
     }
   }
