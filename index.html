@@ -113,10 +113,12 @@
   let headerWidth = "not set";
   let ribbonWidth = "not set";
   let gridColumns = "not set";
-  let slideValue = 0;
+  let slideValue = 25;
 
-  slide = document.getElementById('myRange').onchange = function() {slideChange()};
+  document.getElementById('myRange').onchange = function() {slideChange()};
+  document.getElementById('myRange').oninput = function() {slideChange()};
   sliderDiv = document.getElementById("sliderLabel");
+  document.getElementById('myRange').value = slideValue;
 
   createSquares();
   drawPage();
