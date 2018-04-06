@@ -270,6 +270,9 @@ input:checked + .toggle:before {
 }
 
 .toggle.round:before {
+  background-color: #9c0404;
+  background-image: url("toggleSlider.jpg");
+  background-size: cover;
   border-radius: 20%;
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
