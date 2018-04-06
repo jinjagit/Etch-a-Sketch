@@ -1,6 +1,23 @@
+body {
+  background: yellow;
+}
+
+body > * {
+  display: none;
+}
+
+#winSizeWarning {
+  display: block;
+  text-align: center;
+  margin-top: 1em;
+  color: red;
+  font-family: 'Space+Mono', monospace;
+  font-weight: bold;
+}
+
 @media all and (min-height: 340px) and (min-width: 280px) {
 
-  body{
+  body {
     /** font-family: 'Space+Mono', monospace; **/
     font-family: 'Dr Sugiyama', cursive, "Times New Roman", Times, serif;
     color: #f9dd8e;
@@ -8,6 +25,10 @@
     margin: 0 auto;
     background-size: cover; /** This seems to work better than no-repeat (Chrome on Android issues) **/
     text-shadow: 2px 2px rgba(0,0,0,0.75);
+  }
+
+  #winSizeWarning {
+    display: none;
   }
 
   #middleWrapper {
@@ -156,6 +177,7 @@
   }
 
   #header {
+    display: block;
     background-color: rgba(187, 187, 187, 0);
     margin: auto;
   }
@@ -183,8 +205,8 @@
   }
 
   #reset {
-    margin:0 0 0 5px;
-    display:block;
+    margin: 0 0 0 5px;
+    display: block;
     background-color: #f9dd8e;
     background-image: url("lampOff.jpg");
     background-size: cover;
