@@ -164,10 +164,7 @@
       } else { // must be color mode
           red = Math.floor(rand239());
           blue = Math.floor(rand239());
-          green = Math.floor(rand239());
-          red = Math.floor(red + (238 - red) * ((100 - slideValue) / 100)).toString();
-          blue = Math.floor(blue + (238 - blue) * ((100 - slideValue) / 100)).toString();
-          green = Math.floor(green + (238 - green) * ((100 - slideValue) / 100)).toString();
+          green = Math.floor(rand239());      
           rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
       }
     } else {
