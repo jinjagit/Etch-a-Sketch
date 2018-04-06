@@ -378,11 +378,17 @@ input:checked + .toggle:before {
       padding-top: 5px;
       height: 54px;
       width: 90px;
+      font-size: 16px;
     }
     .toggle:before {
       height: 39px;
       width: 39px;
       top: 7px;
+    }
+    input:checked + .toggle:before {
+      -webkit-transform: translateX(39px);
+      -ms-transform: translateX(39px);
+      transform: translateX(39px);
     }
   }
 
