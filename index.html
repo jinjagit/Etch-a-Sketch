@@ -62,7 +62,7 @@
     if (gridLimit > gridWidthLimit) {gridLimit = gridWidthLimit;} // Set grid side-length to less than smallest window dimension (x or y)
     gridSize = gridLimit.toString() + "px";
 
-    headerLimit = Math.floor(window.innerHeight * 0.15);
+    headerLimit = Math.floor(gridLimit * 0.2);
     headerHeight = headerLimit.toString() + "px";
 
     headerWidth = (gridLimit + 8).toString() + "px"; // Add 8px to header width to account for grid drop shadow
@@ -164,7 +164,7 @@
       } else { // must be color mode
           red = Math.floor(rand239());
           blue = Math.floor(rand239());
-          green = Math.floor(rand239());      
+          green = Math.floor(rand239());
           rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
       }
     } else {

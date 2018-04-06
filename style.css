@@ -188,7 +188,7 @@ input[type=range]:focus::-moz-slider-runnable-track {
   border: none;
   outline: none;
   box-sizing: border-box;
-  height: 34px;
+  height: 36px;
   width: 60px;
   -webkit-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
@@ -213,8 +213,8 @@ input[type=range]:focus::-moz-slider-runnable-track {
   float: right;
   margin-right: 50px;
   display: block;
+  height: 36px;
   width: 60px;
-  height: 34px;
 }
 
 .switch input {display:none;}
@@ -231,7 +231,6 @@ input[type=range]:focus::-moz-slider-runnable-track {
   background-size: cover;
   -webkit-transition: .4s;
   transition: .4s;
-
 }
 
 .toggle:before {
@@ -245,7 +244,6 @@ input[type=range]:focus::-moz-slider-runnable-track {
   -webkit-transition: .4s;
   transition: .4s;
   border-radius: 20%;
-
 }
 
 input:checked + .toggle {
@@ -277,10 +275,10 @@ input:checked + .toggle:before {
   -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
-  margin: 0  auto;
+  margin: 0 auto;
 }
 
-@media all and (min-width: 400px) {
+/**@media all and (min-width: 400px) {
   h1 {
     font-size: 38px;
     margin-top: 0px;
@@ -318,11 +316,79 @@ input:checked + .toggle:before {
     -webkit-transform: translateX(39px);
     -ms-transform: translateX(39px);
     transform: translateX(39px);
+  }**/
+
+  @media all and (min-height: 400px) and (min-width: 400px) {
+    #title {
+      font-size: 20px;
+      margin-top: 2px;
+    }
+    #titleContainer {
+      padding-top: 4px;
+      height: 21px;
+    }
+    .slider {
+      width: 60%;
+      margin-top: 2px;
+    }
+    #sliderContainer {
+      padding-top: 1px;
+      padding-bottom: 3px;
+    }
+    #tm {
+      bottom: 6px;
+      font-size: 12px;
+    }
+    .switch {
+      margin-right: 10px;
+    }
+    #reset {
+      margin:0 0 0 10px;
+      padding-top: 5px;
+    }
   }
 
-  @media all and (min-height: 1000px) {
+  @media all and (min-height: 600px) and (min-width: 600px) {
     #title {
-      font-size: 48px;
+      font-size: 28px;
+      margin-top: 0px;
+    }
+    #titleContainer {
+      padding-top: 14px;
+      height: 29px;
+    }
+    .slider {
+      width: 65%;
+      margin-top: 8px;
+    }
+    #sliderContainer {
+      padding-top: 9px;
+      padding-bottom: 4px;
+    }
+    #tm {
+      bottom: 14px;
+    }
+    .switch {
+      margin-right: 50px;
+      height: 54px;
+      width: 90px;
+    }
+    #reset {
+      margin:0 0 0 50px;
+      padding-top: 5px;
+      height: 54px;
+      width: 90px;
+    }
+    .toggle:before {
+      height: 39px;
+      width: 39px;
+      top: 7px;
+    }
+  }
+
+  @media all and (min-height: 800px) and (min-width: 800px) {
+    #title {
+      font-size: 42px;
       margin-top: 0px;
     }
     #tm {
@@ -333,10 +399,44 @@ input:checked + .toggle:before {
       margin-top: 12px;
     }
     #titleContainer {
-      padding-top: 27px;
+      padding-top: 15px;
     }
     #sliderLabel {
       padding-top: 10px;
+    }
+  }
+
+  @media all and (min-height: 900px) and (min-width: 900px) {
+    #sliderContainer {
+      padding-top: 15px;
+      padding-bottom: 4px;
+    }
+    #titleContainer {
+      padding-top: 24px;
+    }
+  }
+
+  @media all and (min-height: 1000px) and (min-width: 1000px) {
+    #title {
+      font-size: 48px;
+      margin-top: 0px;
+    }
+    #tm {
+      margin-top: 0px;
+    }
+    .slider {
+      width: 65%;
+      margin-top: 16px;
+    }
+    #titleContainer {
+      padding-top: 20px;
+    }
+    #sliderLabel {
+      padding-top: 20px;
+    }
+    #sliderContainer {
+      padding-top: 16px;
+      padding-bottom: 4px;
     }
   }
 }
