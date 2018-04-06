@@ -76,7 +76,7 @@ body > * {
 
   .slider {
     display: inline-block;
-    width: 60%;
+    width: 50px;
     vertical-align: middle;
     margin-top: 0px;
   }
@@ -155,10 +155,10 @@ body > * {
 
   #sliderLabel {
     display: inline-block;
-    font-family: Arial;
-    font-size: 12px;
+    font-family: 'Space+Mono', monospace;
+    font-size: 14px;
     text-shadow: 1.5px 1.5px rgba(0,0,0,0.75);
-    left: 5px;
+    margin-left: -10px;
     vertical-align: middle;
   }
 
@@ -222,7 +222,8 @@ body > * {
     box-shadow: 3px 3px 2px 0px rgba(0,0,0,0.75);
     font-family: Arial;
     font-size: 8px;
-    padding-top: 4px;
+    font-weight: bold;
+    padding-top: 1px;
   }
 
   #reset:active {
@@ -317,7 +318,7 @@ body > * {
       height: 21px;
     }
     .slider {
-      width: 60%;
+      width: 75px;
       margin-top: 2px;
     }
     #sliderContainer {
@@ -335,10 +336,11 @@ body > * {
     }
     #reset {
       margin:0 0 0 10px;
-      padding-top: 4px;
+      padding-top: 2px;
       height: 36px;
       width: 60px;
       font-size: 12px;
+      letter-spacing: 0.75px;
     }
     .toggle:before {
       height: 26px;
@@ -363,7 +365,7 @@ body > * {
       height: 29px;
     }
     .slider {
-      width: 65%;
+      width: 100px;
       margin-top: 4px;
     }
     #sliderContainer {
@@ -380,10 +382,11 @@ body > * {
     }
     #reset {
       margin:0 0 0 50px;
-      padding-top: 5px;
+      padding-top: 4px;
       height: 54px;
       width: 90px;
-      font-size: 16px;
+      font-size: 17px;
+      letter-spacing: 1.5px;
     }
     .toggle:before {
       height: 39px;
@@ -404,7 +407,6 @@ body > * {
         width: 17px;
         margin-top: -8px;
     }
-
     input[type=range]::-moz-range-thumb {
         height: 17px;
         width: 17px;
@@ -418,17 +420,19 @@ body > * {
       margin-top: 0px;
     }
     #tm {
-      margin-top: 0px;
+      bottom: 23px;
+      font-size: 16px;
     }
     .slider {
-      width: 65%;
+      width: 160px;
       margin-top: 12px;
     }
     #titleContainer {
       padding-top: 15px;
     }
     #sliderLabel {
-      padding-top: 10px;
+      padding-top: 6px;
+      font-size: 18px;
     }
     input[type=range]::-webkit-slider-thumb {
         height: 21px;
@@ -462,18 +466,22 @@ body > * {
       margin-top: 0px;
     }
     .slider {
-      width: 65%;
+      width: 190px;
       margin-top: 16px;
     }
     #titleContainer {
       padding-top: 20px;
     }
     #sliderLabel {
-      padding-top: 20px;
+      padding-top: 16px;
     }
     #sliderContainer {
       padding-top: 16px;
       padding-bottom: 4px;
+    }
+    #tm {
+      bottom: 26px;
+      font-size: 18px;
     }
   }
 }

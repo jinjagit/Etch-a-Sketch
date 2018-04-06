@@ -103,7 +103,11 @@
 
   function slideChange() {
     slideValue = document.getElementById('myRange').value;
-    sliderDiv.innerHTML = slideValue + "%";
+    if (slideValue < 100) {
+      sliderDiv.innerHTML = "&nbsp;" + slideValue + "%";
+    } else {
+      sliderDiv.innerHTML = slideValue + "%";
+    }
   }
 
   function parseRGB(rgbString) {
