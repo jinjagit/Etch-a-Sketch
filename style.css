@@ -111,7 +111,7 @@ body > * {
       width: 13px;
       border-radius: 50%;
       background-color: #f9dd8e;
-      margin-top: -7px;
+      margin-top: -6px;
       -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
       -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
       box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
@@ -139,11 +139,11 @@ body > * {
   input[type=range]::-moz-range-thumb {
       -moz-appearance: none;
       border: none;
-      height: 21px;
-      width: 21px;
+      height: 13px;
+      width: 13px;
       border-radius: 50%;
       background-color: #f9dd8e;
-      margin-top: -10px;
+      margin-top: -6px;
       -webkit-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
       -moz-box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
       box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
@@ -398,6 +398,20 @@ body > * {
     }
   }
 
+  @media all and (min-height: 675px) and (min-width: 675px) {
+    input[type=range]::-webkit-slider-thumb {
+        height: 17px;
+        width: 17px;
+        margin-top: -8px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        height: 17px;
+        width: 17px;
+        margin-top: -8px;
+    }
+  }
+
   @media all and (min-height: 800px) and (min-width: 800px) {
     #title {
       font-size: 42px;
@@ -415,6 +429,17 @@ body > * {
     }
     #sliderLabel {
       padding-top: 10px;
+    }
+    input[type=range]::-webkit-slider-thumb {
+        height: 21px;
+        width: 21px;
+        margin-top: -10px;
+    }
+
+    input[type=range]::-moz-range-thumb {
+        height: 21px;
+        width: 21px;
+        margin-top: -10px;
     }
   }
 
