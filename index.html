@@ -28,7 +28,7 @@
       </div>
       <div class='wrapper'>
         <label class="switch">
-          <input type="checkbox">
+          <input type="checkbox" id="toggleBox">
           <span title="Toggle mode: monochrome or random color" class="toggle round" id="toggle"></span>
         </label>
       </div>
@@ -221,6 +221,7 @@
 
   createSquares();
   drawPage();
+  document.getElementById("toggleBox").checked = false;
   slideChange();
   squareHoverListen();
 
