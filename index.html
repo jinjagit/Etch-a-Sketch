@@ -147,8 +147,8 @@
     return rgbArray;
   }
 
-  function rand239() { // Max rgb values of 238, as I chose a light grey as 'white' (rgb (238, 238, 238))
-    let rand = Math.floor(Math.random() * 239);
+  function randNum(a) { // Max rgb values of 238, as I chose a light grey as 'white' (rgb (238, 238, 238))
+    let rand = Math.floor(Math.random() * a);
     return rand;
   }
 
@@ -168,10 +168,14 @@
         let grey = Math.floor(238 - (238 * (slideValue / 100)));
         rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
       } else { // must be color mode
-          red = Math.floor(rand239());
-          blue = Math.floor(rand239());
-          green = Math.floor(rand239());
-          rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
+        // 'Magic number' approach to creation of new 'random' color numSquares
+        // ...ensures 'lightest' draw weight does not produce very feint colors
+        // ...which tend to grey/brown quickly when darkened.
+        let randLimit = (((slideValue - 10) / 90) * 160) + 78;
+        red = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
+        blue = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
+        green = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
+        rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
       }
     } else {
       red = rgbValues[0];

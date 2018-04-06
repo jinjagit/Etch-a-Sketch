@@ -256,7 +256,7 @@ body > * {
     right: 0;
     bottom: 0;
     background-color: #f9dd8e;
-    background-image: url("toggleBackground.jpg");
+    background-image: url("toggleBackgroundL.jpg");
     background-size: cover;
     -webkit-transition: .4s;
     transition: .4s;
