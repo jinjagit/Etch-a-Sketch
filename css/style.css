@@ -216,7 +216,7 @@ body > * {
     margin: 0 0 0 5px;
     display: block;
     background-color: #f9dd8e;
-    background-image: url("lampOff.jpg");
+    background-image: url("./img/lampOff.jpg");
     background-size: cover;
     color: #d43030;
     border-radius: 8px;
@@ -240,7 +240,7 @@ body > * {
 
   #reset:active {
     background-color: #f2e3b8;
-    background-image: url("lampOn.jpg");
+    background-image: url("./img/lampOn.jpg");
     background-size: cover;
     -webkit-box-shadow: -3px -3px 2px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: -3px -3px 2px 0px rgba(0, 0, 0, 0.75);
@@ -273,7 +273,7 @@ body > * {
     right: 0;
     bottom: 0;
     background-color: #f9dd8e;
-    background-image: url("toggleBackgroundL.jpg");
+    background-image: url("./img/toggleBackground.jpg");
     background-size: cover;
     -webkit-transition: .4s;
     transition: .4s;
@@ -315,7 +315,7 @@ body > * {
 
   .toggle.round:before {
     background-color: #9c0404;
-    background-image: url("toggleSlider.jpg");
+    background-image: url("./img/toggleSlider.jpg");
     background-size: cover;
     border-radius: 20%;
     -webkit-box-shadow: 2px 2px 1px 0px rgba(0, 0, 0, 0.75);
@@ -353,7 +353,7 @@ body > * {
     }
     #reset {
       margin:0 0 0 10px;
-      padding-top: 2px;
+      padding-top: 3.5px;
       height: 36px;
       width: 60px;
       font-size: 12px;
