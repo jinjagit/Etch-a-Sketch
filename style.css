@@ -149,6 +149,14 @@ body > * {
       box-shadow: 2px 2px 1px 0px rgba(0,0,0,0.75);
   }
 
+  input[type=range]::-moz-range-thumb:hover {
+    opacity: 0.85;
+  }
+
+  input[type=range]::-webkit-slider-thumb:hover {
+    opacity: 0.85;
+  }
+
   input[type=range]:focus::-moz-slider-runnable-track {
       background-color: #52400d;
   }
@@ -226,6 +234,10 @@ body > * {
     padding-top: 1px;
   }
 
+  #reset:hover {
+    opacity: 0.85;
+  }
+
   #reset:active {
     background-color: #f2e3b8;
     background-image: url("lampOn.jpg");
@@ -233,6 +245,7 @@ body > * {
     -webkit-box-shadow: -3px -3px 2px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: -3px -3px 2px 0px rgba(0,0,0,0.75);
     box-shadow: -3px -3px 2px 0px rgba(0,0,0,0.75);
+    opacity: 1;
   }
 
   /** toggle stuff **/
@@ -246,6 +259,10 @@ body > * {
     width: 40px;
   }
 
+  .switch:hover {
+    opacity: 0.85;
+  }
+
   .switch input {display:none;}
 
   .toggle {
@@ -255,7 +272,7 @@ body > * {
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #f9dd8e;
+    /**background-color: #f9dd8e;**/
     background-image: url("toggleBackgroundL.jpg");
     background-size: cover;
     -webkit-transition: .4s;
