@@ -98,6 +98,7 @@
     createSquares();
     drawPage();
     slideChange();
+    titleHoverUpdate()
     squareHoverListen();
   }
 
@@ -108,6 +109,13 @@
     } else {
       sliderDiv.innerHTML = slideValue + "%";
     }
+    titleHoverUpdate()
+  }
+
+  function titleHoverUpdate() {
+    let titleElement = document.getElementById('title');
+    titleElement.title = `current settings:\ngrid: ${gridDimension} x `
+    + `${gridDimension}\nmode: ${mode}\ndraw weight: ${slideValue}%`;
   }
 
   function parseRGB(rgbString) {
@@ -203,6 +211,7 @@
     } else {
       mode = "monochrome";
     }
+    titleHoverUpdate()
   }
 
   let gridDimension = 32;
@@ -231,6 +240,7 @@
   drawPage();
   document.getElementById("toggleBox").checked = false;
   slideChange();
+  titleHoverUpdate()
   squareHoverListen();
 
 </script>
