@@ -21,16 +21,12 @@ function calcSizes() {
   gridLimit = gridHeightLimit;
   if (gridLimit > gridWidthLimit) {gridLimit = gridWidthLimit;} // Set grid side-length to less than smallest window dimension (x or y)
   gridSize = gridLimit.toString() + "px";
-
   headerLimit = Math.floor(gridLimit * 0.2);
   headerHeight = headerLimit.toString() + "px";
-
   headerWidth = (gridLimit + 8).toString() + "px"; // Add 8px to header width to account for grid drop shadow
   ribbonWidth = (gridLimit + 4).toString() + "px"; // Subtract 4px from ribbon width to account for border
-
   let rowHeightNum = (gridLimit - (gridDimension - 1))/ gridDimension; // Account for 1px grid-gap
   rowHeight = rowHeightNum.toString() + "px";
-
   gridColumns = "repeat(" + gridDimension.toString() + ", 1fr)"
 }
 
@@ -57,22 +53,22 @@ function reset() {
   removeSquares();
   createSquares();
   drawPage();
-  slideChange();
-  titleHoverUpdate()
+  sliderChange();
+  titleTooltipUpdate()
   squareHoverListen();
 }
 
-function slideChange() {
+function sliderChange() {
   slideValue = document.getElementById('myRange').value;
   if (slideValue < 100) {
     sliderDiv.innerHTML = "&nbsp;" + slideValue + "%";
   } else {
     sliderDiv.innerHTML = slideValue + "%";
   }
-  titleHoverUpdate()
+  titleTooltipUpdate()
 }
 
-function titleHoverUpdate() {
+function titleTooltipUpdate() {
   let titleElement = document.getElementById('title');
   titleElement.title = `current settings:\ngrid: ${gridDimension} x `
   + `${gridDimension}\nmode: ${mode}\ndraw weight: ${slideValue}%`;
@@ -83,6 +79,7 @@ function parseRGB(rgbString) {
   let green = "";
   let blue = "";
   let char = "";
+  let color = "";
   let rgbArray = [];
 
   for (let i = 1; i < 4; i++) { // this code block strips rgb values out of css rgb string (for current color of a 'square' element)
@@ -92,7 +89,6 @@ function parseRGB(rgbString) {
       rgbString = rgbString.slice(2);
     }
     char = rgbString.slice(0, 1);
-    let color = "";
     do {
       color = color + char;
       rgbString = rgbString.slice(1);
@@ -106,7 +102,6 @@ function parseRGB(rgbString) {
   rgbArray[0] = parseInt(red);
   rgbArray[1] = parseInt(green);
   rgbArray[2] = parseInt(blue);
-
   return rgbArray;
 }
 
@@ -126,21 +121,18 @@ function changeColor() {
   let green = 0;
   let blue = 0;
 
-  if (rgbValues[0] === 238 && rgbValues[1] === 238 && rgbValues[2] === 238) { // if 'white', though actually very light grey
-    if (mode === "monochrome") {
+  if (rgbValues[0] === 238 && rgbValues[1] === 238 && rgbValues[2] === 238) { // if 'white', though actually very light grey; rgb(238, 238, 238)
+    if (mode === "monochrome") { // create new grey square
       let grey = Math.floor(238 - (238 * (slideValue / 100)));
       rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
-    } else { // must be color mode
-      // 'Magic number' approach to creation of new 'random' color numSquares
-      // ...ensures 'lightest' draw weight does not produce very feint colors
-      // ...which tend to grey/brown quickly when darkened.
+    } else { // create new color square (different algo avoids very faint sqaures which tend to grey/brown when darkened)
       let randLimit = (((slideValue - 10) / 90) * 160) + 78;
       red = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
       blue = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
       green = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
       rgbNewString = "rgb(" + red + ", " + blue + ", " + green + ")";
     }
-  } else {
+  } else { // darken by grey (add black * draw weight percent)
     red = rgbValues[0];
     green = rgbValues[1];
     blue = rgbValues[2];
@@ -166,7 +158,7 @@ function toggleMode() {
   } else {
     mode = "monochrome";
   }
-  titleHoverUpdate()
+  titleTooltipUpdate()
 }
 
 let gridDimension = 32;
@@ -185,8 +177,8 @@ let slideValue = 25;
 let mode = "monochrome";
 let squares = [];
 
-document.getElementById('myRange').oninput = function() {slideChange()};
-document.getElementById('myRange').onchange = function() {slideChange()};
+document.getElementById('myRange').oninput = function() {sliderChange()};
+document.getElementById('myRange').onchange = function() {sliderChange()};
 sliderDiv = document.getElementById("sliderLabel");
 document.getElementById('myRange').value = slideValue;
 document.getElementById('toggle').onclick = function() {toggleMode()};
@@ -194,6 +186,6 @@ document.getElementById('toggle').onclick = function() {toggleMode()};
 createSquares();
 drawPage();
 document.getElementById("toggleBox").checked = false;
-slideChange();
-titleHoverUpdate()
+sliderChange();
+titleTooltipUpdate()
 squareHoverListen();
