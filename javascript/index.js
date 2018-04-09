@@ -53,12 +53,12 @@
     removeSquares();
     createSquares();
     drawPage();
-    sliderChange();
+    sliderLabelUpdate();
     titleTooltipUpdate()
     squareHoverListen();
   }
 
-  function sliderChange() {
+  function sliderLabelUpdate() {
     slideValue = document.getElementById('myRange').value;
     if (slideValue < 100) {
       sliderDiv.innerHTML = "&nbsp;" + slideValue + "%";
@@ -178,8 +178,8 @@
   let mode = "monochrome";
   let squares = [];
 
-  document.getElementById('myRange').oninput = function() {sliderChange()};
-  document.getElementById('myRange').onchange = function() {sliderChange()};
+  document.getElementById('myRange').oninput = function() {sliderLabelUpdate()};
+  document.getElementById('myRange').onchange = function() {sliderLabelUpdate()};
   sliderDiv = document.getElementById("sliderLabel");
   document.getElementById('myRange').value = slideValue;
   document.getElementById('toggle').onclick = function() {toggleMode()};
@@ -187,6 +187,6 @@
   createSquares();
   drawPage();
   document.getElementById("toggleBox").checked = false;
-  sliderChange();
+  sliderLabelUpdate();
   titleTooltipUpdate();
   squareHoverListen();
