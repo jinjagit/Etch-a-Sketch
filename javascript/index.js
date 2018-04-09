@@ -59,11 +59,11 @@
   }
 
   function sliderLabelUpdate() {
-    slideValue = document.getElementById('myRange').value;
-    if (slideValue < 100) {
-      sliderDiv.innerHTML = "&nbsp;" + slideValue + "%";
+    sliderValue = document.getElementById('myRange').value;
+    if (sliderValue < 100) {
+      sliderDiv.innerHTML = "&nbsp;" + sliderValue + "%";
     } else {
-      sliderDiv.innerHTML = slideValue + "%";
+      sliderDiv.innerHTML = sliderValue + "%";
     }
     titleTooltipUpdate()
   }
@@ -71,7 +71,7 @@
   function titleTooltipUpdate() {
     let titleElement = document.getElementById('title');
     titleElement.title = `current settings:\ngrid: ${gridDimension} x `
-    + `${gridDimension}\nmode: ${mode}\ndraw weight: ${slideValue}%`;
+    + `${gridDimension}\nmode: ${mode}\ndraw weight: ${sliderValue}%`;
   }
 
   function parseRGB(rgbString) {
@@ -124,10 +124,10 @@
 
     if (rgbValues[0] === 238 && rgbValues[1] === 238 && rgbValues[2] === 238) { // if 'white', though actually very light grey
       if (mode === "monochrome") {
-        let grey = Math.floor(238 - (238 * (slideValue / 100)));
+        let grey = Math.floor(238 - (238 * (sliderValue / 100)));
         rgbNewString = "rgb(" + grey.toString() + ", " + grey.toString() + ", " + grey.toString() + ")";
       } else { // create color square (avoiding very faint colors that tend to grey / brown on darkening)
-        let randLimit = (((slideValue - 10) / 90) * 160) + 78;
+        let randLimit = (((sliderValue - 10) / 90) * 160) + 78;
         red = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
         blue = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
         green = Math.floor((238 - randLimit) + (randNum(randLimit + 1)));
@@ -137,9 +137,9 @@
       red = rgbValues[0];
       green = rgbValues[1];
       blue = rgbValues[2];
-      red = Math.floor(red - (238 * (slideValue / 100)));
-      green = Math.floor(green - (238 * (slideValue / 100)));
-      blue = Math.floor(blue - (238 * (slideValue / 100)));
+      red = Math.floor(red - (238 * (sliderValue / 100)));
+      green = Math.floor(green - (238 * (sliderValue / 100)));
+      blue = Math.floor(blue - (238 * (sliderValue / 100)));
       if (red < 25) {red = 0;} // err on darker side of rounding errors, with 24 being 10% of lightest possible value of 238 (minimum weight)
       if (red < 25) {red = 0;}
       if (red < 25) {red = 0;}
@@ -174,14 +174,14 @@
   let headerWidth = "not set";
   let ribbonWidth = "not set";
   let gridColumns = "not set";
-  let slideValue = 25;
+  let sliderValue = 25;
   let mode = "monochrome";
   let squares = [];
 
   document.getElementById('myRange').oninput = function() {sliderLabelUpdate()};
   document.getElementById('myRange').onchange = function() {sliderLabelUpdate()};
   sliderDiv = document.getElementById("sliderLabel");
-  document.getElementById('myRange').value = slideValue;
+  document.getElementById('myRange').value = sliderValue;
   document.getElementById('toggle').onclick = function() {toggleMode()};
 
   createSquares();
