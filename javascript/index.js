@@ -106,7 +106,7 @@
     return rgbArray;
   }
 
-  function randNum(a) { // Max rgb values of 238, as I chose a light grey as 'white'; rgb(238, 238, 238)
+  function randNum(a) {
     let rand = Math.floor(Math.random() * a);
     return rand;
   }
